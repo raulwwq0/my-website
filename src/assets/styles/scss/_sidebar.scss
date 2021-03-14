@@ -1,0 +1,58 @@
+@use 'var';
+
+#sidebar{
+    display: flex;
+    position: fixed;
+    flex-flow: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 40px;
+    height: 100vh;
+
+    .icon-wrap{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        width: 40px;
+    }
+
+    #hamburger,
+    #menu-icons,
+    #social-icons{
+        img{
+            padding-left: 5px;
+            width: 25px;
+        }
+    }
+
+    #menu-icons{
+        .active{
+            display: block;
+            background-color: black;
+            color: white;
+            width: 38px;
+            border-top-right-radius: 99px;
+            border-bottom-right-radius: 99px;
+            img{
+                filter: invert(100%);
+            }
+            
+            //padding: 10px;
+        }
+    }
+
+    #hamburger{
+        cursor: pointer;
+    }
+
+    .icon-text {
+        display: none;
+        opacity: 0;
+        color: var.$font-color;
+        font-family: var.$text-font;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    
+}

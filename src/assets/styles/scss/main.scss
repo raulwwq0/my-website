@@ -1,0 +1,55 @@
+/*
+This is the main SCSS stylesheet, where I loaded 
+every stylesheet from other components.
+
+All these styles are imported into styles.css
+*/
+
+// Import components styles
+@use 'var';
+@use 'sidebar';
+@use 'projects';
+
+// Custom Fonts
+@font-face {
+    src: url('../../fonts/Cambay.ttf');
+    font-family: "Cambay";
+}
+
+// Common styles
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+body {
+    background-color: var.$bg-color;
+    overflow: hidden;
+}
+
+#app{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.content{
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 60px;
+    width: 100%;
+}
+
+.icons{
+    width: 30px;
+    margin: 10px 0px 10px;
+}
+
+.title{
+    font-family: var.$text-font;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    padding-left: 10px;
+}

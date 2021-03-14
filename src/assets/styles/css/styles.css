@@ -1,3 +1,150 @@
+#sidebar {
+  display: flex;
+  position: fixed;
+  flex-flow: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 40px;
+  height: 100vh;
+}
+#sidebar .icon-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 40px;
+}
+#sidebar #hamburger img,
+#sidebar #menu-icons img,
+#sidebar #social-icons img {
+  padding-left: 5px;
+  width: 25px;
+}
+#sidebar #menu-icons .active {
+  display: block;
+  background-color: black;
+  color: white;
+  width: 38px;
+  border-top-right-radius: 99px;
+  border-bottom-right-radius: 99px;
+}
+#sidebar #menu-icons .active img {
+  filter: invert(100%);
+}
+#sidebar #hamburger {
+  cursor: pointer;
+}
+#sidebar .icon-text {
+  display: none;
+  opacity: 0;
+  color: #414141;
+  font-family: Cambay;
+  font-size: 20px;
+  margin-left: 20px;
+}
 
+#projects {
+  width: 90%;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 2%;
+  grid-row-gap: 5%;
+  align-items: center;
+}
+#projects .project {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  background: url("../../images/desktop-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+#projects .project .project-info {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 300px;
+  top: 250px;
+}
+#projects .project .project-info .project-title {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+#projects .project .project-info p {
+  color: white;
+  text-align: justify;
+  padding: 15px;
+}
+#projects .project .project-info button {
+  color: white;
+  padding: 15px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 15px;
+  width: 50%;
+  font-size: 15px;
+  transition: all 300ms ease-in-out;
+}
+#projects .project .project-info button:hover {
+  color: black;
+  background-color: white;
+}
+
+/*
+This is the main SCSS stylesheet, where I loaded 
+every stylesheet from other components.
+
+All these styles are imported into styles.css
+*/
+@font-face {
+  src: url("../../fonts/Cambay.ttf");
+  font-family: "Cambay";
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+body {
+  background-color: #efefef;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  margin-left: 60px;
+  width: 100%;
+}
+
+.icons {
+  width: 30px;
+  margin: 10px 0px 10px;
+}
+
+.title {
+  font-family: Cambay;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  padding-left: 10px;
+}
 
 /*# sourceMappingURL=styles.css.map */
