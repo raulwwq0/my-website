@@ -4,17 +4,26 @@
   <div id="projects" v-if="projects">
     <article
       class="project"
-      @mouseover="infoHoverON()"
-      @mouseleave="infoHoverOFF()"
+      @mouseover="infoHoverON(project._id)"
+      @mouseleave="infoHoverOFF(project._id)"
       v-for="project in projects"
-      :key="project._id"      
+      :key="project._id"
     >
-      <div class="project-info">
-        <h2 class="project-title">{{project.title}}</h2>
-        
-        <p>{{project.description}}</p>
+      <img
+        :src="'http://localhost:3900/api/get-image/' + project.image"
+        :alt="project.title"
+      />
 
-        <button>Ir a la web</button>
+      <div :class="'project-info project-info-' + project._id">
+        <div class="project-title">
+          <h2>{{ project.title }}</h2>
+        </div>
+
+        <p>{{ project.description }}</p>
+
+        <form :action="project.link" target="_blank">
+          <button>Ir a la web</button>
+        </form>
       </div>
     </article>
   </div>
@@ -29,36 +38,44 @@ export default {
   data() {
     return {
       projects: [],
-    }
+    };
   },
   setup() {
-    function infoHoverON() {
-      gsap.to(".project-info", {
+    function infoHoverON(_id) {
+      let classID = ".project-info-" + _id;
+      gsap.to(classID, {
+        duration: 0.3,
         y: "-250px",
         background: "rgba(0, 0, 0, 0.85)",
       });
     }
 
-    function infoHoverOFF() {
-      gsap.to(".project-info", { y: "0%", background: "rgba(0, 0, 0, 0.5)" });
+    function infoHoverOFF(_id) {
+      let classID = ".project-info-" + _id;
+      gsap.to(classID, {
+        duration: 0.3,
+        y: "0%",
+        background: "rgba(0, 0, 0, 0.5)",
+      });
     }
 
     function getProjects() {
-
-      axios.get('http://localhost:3900/api/projects')
-           .then(res => {
-             if(res.data.status == 'success'){
-               //Vue.set(this.projects,this.projects._id,res.data.projects);
-               this.projects = res.data.projects;
-             }
-             console.log(this.projects);
-           });
+      axios.get("http://localhost:3900/api/projects").then((res) => {
+        if (res.data.status == "success") {
+          //Vue.set(this.projects,this.projects._id,res.data.projects);
+          this.projects = res.data.projects;
+        }
+        console.log(this.projects);
+      });
+      for (var project in this.projects) {
+        this.projects[project].className += project._id;
+      }
     }
 
     return { infoHoverON, infoHoverOFF, getProjects };
   },
-  mounted(){
+  mounted() {
     this.getProjects();
-  }
+  },
 };
 </script>

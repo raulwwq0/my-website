@@ -51,15 +51,17 @@
   grid-column-gap: 2%;
   grid-row-gap: 5%;
   align-items: center;
+  font-family: Cambay;
+}
+#projects img {
+  width: 100%;
+  height: 300px;
 }
 #projects .project {
   display: flex;
   align-items: flex-end;
   position: relative;
   overflow: hidden;
-  background: url("../../images/desktop-design.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   height: 300px;
   border-radius: 20px;
@@ -72,27 +74,37 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 270px;
+  height: 285px;
   top: 250px;
-  padding: 15px 0px 15px;
+  padding: 0px 0px 15px;
 }
 #projects .project .project-info .project-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   color: white;
+}
+#projects .project .project-info .project-title h2 {
+  font-size: 1vw;
   width: 100%;
-  text-align: center;
 }
 #projects .project .project-info p {
   color: white;
-  text-align: justify;
+  text-align: center;
   padding: 15px;
 }
-#projects .project .project-info button {
+#projects .project .project-info form {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+#projects .project .project-info form button {
   color: white;
   padding: 15px;
   background-color: transparent;
   border: 2px solid white;
   border-radius: 15px;
-  width: 50%;
   font-size: 15px;
   transition: all 300ms ease-in-out;
 }
