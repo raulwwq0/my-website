@@ -13,14 +13,27 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
+        padding-left: 6px;
         width: 40px;
+    }
+
+    .hamburger-wrap{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
     }
 
     #hamburger,
     #menu-icons,
     #social-icons{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        //align-items: center;
+
         img{
-            padding-left: 5px;
+            //padding-left: 5px;
             width: 25px;
         }
     }

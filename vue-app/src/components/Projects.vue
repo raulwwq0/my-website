@@ -1,6 +1,13 @@
 <template>
   <h1 class="title">Proyectos</h1>
 
+  <p class="section-text">
+    Esta es la lista de todos los proyectos que he realizado 
+    desde mis comienzos como desarrollador web. 
+
+    Visita mi GitHub para ver los repositorios de cada proyecto.
+  </p>
+
   <div id="projects" v-if="projects">
     <article
       class="project"
@@ -46,7 +53,7 @@ export default {
       gsap.to(classID, {
         duration: 0.3,
         y: "-250px",
-        background: "rgba(0, 0, 0, 0.85)",
+        background: "rgba(0, 0, 0, 0.9)",
       });
     }
 
@@ -59,10 +66,16 @@ export default {
       });
     }
 
+    function entryAnimation(){
+
+    gsap.fromTo(".project", {x: "-30px", opacity: 0}, {stagger: 0.2, x: "0px", opacity: 1})
+
+      
+    }
+
     function getProjects() {
       axios.get("http://localhost:3900/api/projects").then((res) => {
         if (res.data.status == "success") {
-          //Vue.set(this.projects,this.projects._id,res.data.projects);
           this.projects = res.data.projects;
         }
         console.log(this.projects);
@@ -72,10 +85,13 @@ export default {
       }
     }
 
-    return { infoHoverON, infoHoverOFF, getProjects };
+    return { infoHoverON, infoHoverOFF, entryAnimation, getProjects };
   },
   mounted() {
     this.getProjects();
   },
+  updated() {
+    this.entryAnimation();
+  }
 };
 </script>

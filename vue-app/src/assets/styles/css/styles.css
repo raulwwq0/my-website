@@ -11,12 +11,25 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  padding-left: 6px;
   width: 40px;
+}
+#sidebar .hamburger-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+#sidebar #hamburger,
+#sidebar #menu-icons,
+#sidebar #social-icons {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 #sidebar #hamburger img,
 #sidebar #menu-icons img,
 #sidebar #social-icons img {
-  padding-left: 5px;
   width: 25px;
 }
 #sidebar #menu-icons .active {
@@ -48,8 +61,7 @@
   margin-right: 100px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-column-gap: 2%;
-  grid-row-gap: 5%;
+  grid-gap: 4%;
   align-items: center;
   font-family: Cambay;
 }
@@ -65,6 +77,8 @@
   width: 100%;
   height: 300px;
   border-radius: 20px;
+  box-shadow: 0px 0px 5px #747474;
+  opacity: 0;
 }
 #projects .project .project-info {
   display: flex;
@@ -151,13 +165,22 @@ body {
   margin: 10px 0px 10px;
 }
 
-.title {
+.title,
+.section-text {
   font-family: Cambay;
-  font-size: 50px;
-  margin-top: 50px;
   margin-left: 100px;
-  margin-bottom: 50px;
   padding-left: 10px;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+
+.section-text {
+  font-size: 20px;
+  margin-bottom: 70px;
 }
 
 /*# sourceMappingURL=styles.css.map */
