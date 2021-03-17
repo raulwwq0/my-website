@@ -183,6 +183,12 @@
   border: 1px solid black;
   color: white;
 }
+#contact #email-form #email-sent {
+  background-color: #00b300;
+}
+#contact #email-form #email-fail {
+  background-color: red;
+}
 #contact #different-ways-contact {
   display: grid;
   grid-template-rows: 30% auto;
@@ -216,20 +222,7 @@
   opacity: 0;
 }
 #contact #different-ways-contact #tag-was-copied {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  justify-content: center;
-  width: 50%;
-  height: 30px;
-  border-radius: 10px;
-  text-align: center;
   background-color: #00b300;
-  padding: 10px;
-  color: white;
-  font-family: Cambay;
-  opacity: 0;
-  transform: scale(0);
 }
 
 /*
@@ -286,6 +279,23 @@ body {
 .section-text {
   font-size: 20px;
   margin-bottom: 70px;
+}
+
+.advice {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  font-family: Cambay;
+  opacity: 0;
+  transform: scale(0);
 }
 
 /*# sourceMappingURL=styles.css.map */

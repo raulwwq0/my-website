@@ -70,7 +70,7 @@
         </div>
       </div>
 
-      <div id="tag-was-copied">
+      <div class="advice" id="tag-was-copied">
         Has copiado mi tag de Discord al portapapeles
       </div>
     </div>

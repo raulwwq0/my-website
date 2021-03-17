@@ -62,6 +62,14 @@
             border: 1px solid black;
             color: white;
         }
+
+        #email-sent{
+            background-color: rgb(0, 179, 0);
+        }
+
+        #email-fail{
+            background-color: rgb(255, 0, 0);
+        }
     }
 
     #different-ways-contact{
@@ -101,20 +109,7 @@
         }
 
         #tag-was-copied{
-            display: flex;
-            align-items: center;
-            justify-self: center;
-            justify-content: center;
-            width: 50%;
-            height: 30px;
-            border-radius: 10px;
-            text-align: center;
             background-color: rgb(0, 179, 0);
-            padding: 10px;
-            color: white;
-            font-family: var.$text-font;
-            opacity: 0;
-            transform: scale(0);
         }
     }
 

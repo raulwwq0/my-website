@@ -63,3 +63,20 @@ body {
     font-size: 20px;
     margin-bottom: 70px;
 }
+
+.advice{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    width: 50%;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    font-family: var.$text-font;
+    opacity: 0;
+    transform: scale(0);
+}
