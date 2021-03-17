@@ -78,7 +78,6 @@ export default {
         if (res.data.status == "success") {
           this.projects = res.data.projects;
         }
-        console.log(this.projects);
       });
       for (var project in this.projects) {
         this.projects[project].className += project._id;

@@ -47,21 +47,10 @@
       </router-link>
     </div>
     <div id="social-icons">
-      <a href="https://github.com/raulwwq0">
+      <a href="https://github.com/raulwwq0" target="_blank">
         <div class="icon-wrap">
           <img class="icons" src="../assets/images/github.svg" alt="GitHub" />
           <p class="icon-text">GitHub</p>
-        </div>
-      </a>
-
-      <a href="https://www.linkedin.com/in/agraul21/">
-        <div class="icon-wrap">
-          <img
-            class="icons"
-            src="../assets/images/linkedin.svg"
-            alt="Linkedin"
-          />
-          <p class="icon-text">Linkedin</p>
         </div>
       </a>
     </div>
@@ -91,7 +80,7 @@ export default {
           .to(".icon-text", { opacity: 0, display: "none" })
           .to(".icon-wrap", { width: "40px"}, 0.3)
           .to("#sidebar", { width: "40px" }, 0.2)
-          .to(".content", { marginLeft: "60px" }, 0);
+          .to(".content", { marginLeft: "60px" }, "<0");
       }
       isSidebarOFF.value = !isSidebarOFF.value;
     }
