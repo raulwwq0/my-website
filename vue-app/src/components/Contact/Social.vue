@@ -11,7 +11,7 @@
             <div class="svg-wrap linkedin">
               <img
                 class="contact-icons linkedin-svg"
-                src="../assets/images/linkedin.svg"
+                src="../../assets/images/linkedin.svg"
                 alt="Linkedin"
               />
             </div>
@@ -28,7 +28,7 @@
             <div class="svg-wrap instagram">
               <img
                 class="contact-icons instagram-svg"
-                src="../assets/images/instagram.svg"
+                src="../../assets/images/instagram.svg"
                 alt="Instagram"
               />
             </div>
@@ -45,7 +45,7 @@
             <div class="svg-wrap telegram">
               <img
                 class="contact-icons telegram-svg"
-                src="../assets/images/telegram.svg"
+                src="../../assets/images/telegram.svg"
                 alt="Telegram"
               />
             </div>
@@ -61,7 +61,7 @@
           <div class="svg-wrap discord">
             <img
               class="contact-icons discord-svg"
-              src="../assets/images/discord.svg"
+              src="../../assets/images/discord.svg"
               alt="Discord"
               @click="copyDiscordUsername('.discord-text')"
             />
