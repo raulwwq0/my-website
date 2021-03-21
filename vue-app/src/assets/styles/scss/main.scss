@@ -38,8 +38,10 @@ body {
 .content{
     display: flex;
     flex-flow: column wrap;
+    position: relative;
     margin-left: 60px;
     width: 100%;
+    height: auto;
 }
 
 .icons{

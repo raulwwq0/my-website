@@ -1,3 +1,5 @@
+@use 'var';
+
 #presentation-banner{
     display: block;
     position: relative;
@@ -11,7 +13,87 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        margin:auto;
+        margin: auto;
         height: 300px;
+
+        .title {
+            margin-top: 0px
+        }
     }
+}
+
+#about-me{
+    display: block;
+    position: absolute;
+    top: 110vh;
+    right: 20vw;
+    width: 30%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+    .subtitle{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p{
+        font-family: var.$text-font;
+        font-size: 16px;
+        margin-top: 20px;
+        display: block;
+        float: left;
+        width: 100%;
+        text-align: justify;
+    }
+
+    img{
+        display: block;
+        position: absolute;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        top: -100px;
+        right: -100px;
+        border-radius: 99999px;
+        width: 200px;
+    }
+}
+
+#skills {
+    display: block;
+    position: absolute;
+    top: 170vh;
+    left: 100px;
+    width: 40%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    .subtitle{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p{
+        font-family: var.$text-font;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+        float: left;
+        width: 100%;
+        text-align: justify;
+    }
+
+    #skills-svg{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }    
 }
