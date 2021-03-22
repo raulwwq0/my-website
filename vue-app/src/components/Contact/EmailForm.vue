@@ -19,13 +19,17 @@ import gsap from "gsap";
 export default {
   name: "EmailForm",
   setup() {
+    const service_id = process.env.VUE_APP_EMAILJS_SERVICE_ID;
+    const template_id = process.env.VUE_APP_EMAILJS_TEMPLATE_ID;
+    const user_id = process.env.VUE_APP_EMAILJS_USER_ID;
+
     function sendEmail(e) {
       emailjs
         .sendForm(
-          "service_4t3fp89",
-          "template_tc10fun",
+          service_id,
+          template_id,
           e.target,
-          "user_sWH0f38sG0kqFfBRdm6m6"
+          user_id
         )
         .then(
           (result) => {
@@ -38,6 +42,7 @@ export default {
           },
           (error) => {
             console.log("Email sent went wrong", error);
+            console.log(user_id);
 
             gsap.to("#email-fail", { opacity: 1, scale: 1.2, ease: "bounce" });
             gsap.to("#email-fail", { opacity: 0, scale: 0, delay: 5 });
