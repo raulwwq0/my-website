@@ -25,6 +25,15 @@ export default {
     function animateBackground() {
       // Create gsap timeline for the background
       const bgTimeline = gsap.timeline({ defaults: { duration: 1.5 } });
+      bgTimeline.to('.box', {
+        backgroundColor: '#eee',
+        stagger: {
+          amount: 1,
+          grid: 'auto',
+          from: 'random',
+          ease: 'power1',
+        }
+      })
 
       // Interval for changing color in different boxes every second
       setInterval(() => {
@@ -50,7 +59,7 @@ export default {
           // Finally return the boxes to their original color
           backgroundColor: "#eee",
         })
-      }, 1000);
+      }, 2000);
     }
 
     // Return all functions to use it
