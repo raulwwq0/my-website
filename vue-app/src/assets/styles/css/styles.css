@@ -1,6 +1,7 @@
 #sidebar {
   display: flex;
   position: fixed;
+  z-index: 10;
   flex-flow: column;
   justify-content: space-between;
   background-color: white;
@@ -392,6 +393,23 @@ body {
   font-family: Cambay;
   opacity: 0;
   transform: scale(0);
+}
+
+#bg {
+  display: block;
+  position: fixed;
+  top: -20px;
+  z-index: -5;
+  width: 105vw;
+  height: 102vh;
+  overflow: hidden;
+}
+#bg .box {
+  float: left;
+  width: 10vw;
+  height: 10vh;
+  border: 3px solid white;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=styles.css.map */
