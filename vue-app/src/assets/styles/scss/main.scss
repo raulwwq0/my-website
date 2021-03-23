@@ -42,7 +42,7 @@ body {
     position: relative;
     margin-left: 60px;
     width: var.$all-width;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .icons{
