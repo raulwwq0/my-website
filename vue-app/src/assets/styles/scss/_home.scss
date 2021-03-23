@@ -32,53 +32,54 @@
     }
 }
 
-#about-me{
-    display: block;
-    position: absolute;
-    top: 110vh;
-    right: 20vw;
-    width: 30%;
+#about-me,
+#skills{
+    margin-left: 100px;
+    margin-bottom: 30vh;
+    width: 85%;
     border-radius: 20px;
     padding: 25px;
     background-color: #fff;
     box-shadow: var.$main-shadow;
-    
-    .subtitle{
-        margin: 0px;
-        padding: 0px;
-    }
+}
 
-    p{
-        font-family: var.$text-font;
-        font-size: 16px;
-        margin-top: 20px;
-        display: block;
-        float: left;
-        width: var.$all-width;
-        text-align: justify;
+#about-me{
+    position: relative;
+    min-height: 450px;
+
+    #about-text{
+        width: 65%;
+
+        .subtitle{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p{
+            font-family: var.$text-font;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+            float: left;
+            width: var.$all-width;
+            text-align: justify;
+            margin-right: 5%;
+        }
     }
 
     img{
         display: block;
         position: absolute;
-        box-shadow: var.$main-shadow;
-        top: -100px;
-        right: -100px;
-        border-radius: 99999px;
-        width: 200px;
+        top: 0px;
+        right: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 30%;
+        height: 500px;
     }
 }
 
 #skills {
-    display: block;
-    position: absolute;
-    top: 170vh;
-    left: 100px;
-    width: 40%;
-    background-color: #fff;
-    box-shadow: var.$main-shadow;
-    border-radius: 20px;
-    padding: 25px;
 
     .subtitle{
         margin: 0px;

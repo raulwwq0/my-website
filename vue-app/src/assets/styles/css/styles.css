@@ -86,22 +86,29 @@
   margin-bottom: 30px;
 }
 
-#about-me {
-  display: block;
-  position: absolute;
-  top: 110vh;
-  right: 20vw;
-  width: 30%;
+#about-me,
+#skills {
+  margin-left: 100px;
+  margin-bottom: 30vh;
+  width: 85%;
   border-radius: 20px;
   padding: 25px;
   background-color: #fff;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
-#about-me .subtitle {
+
+#about-me {
+  position: relative;
+  min-height: 450px;
+}
+#about-me #about-text {
+  width: 65%;
+}
+#about-me #about-text .subtitle {
   margin: 0px;
   padding: 0px;
 }
-#about-me p {
+#about-me #about-text p {
   font-family: Cambay;
   font-size: 16px;
   margin-top: 20px;
@@ -109,28 +116,19 @@
   float: left;
   width: 100%;
   text-align: justify;
+  margin-right: 5%;
 }
 #about-me img {
   display: block;
   position: absolute;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  top: -100px;
-  right: -100px;
-  border-radius: 99999px;
-  width: 200px;
+  top: 0px;
+  right: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 30%;
+  height: 500px;
 }
 
-#skills {
-  display: block;
-  position: absolute;
-  top: 170vh;
-  left: 100px;
-  width: 40%;
-  background-color: #fff;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border-radius: 20px;
-  padding: 25px;
-}
 #skills .subtitle {
   margin: 0px;
   padding: 0px;
