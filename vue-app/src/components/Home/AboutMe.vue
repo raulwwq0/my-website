@@ -1,5 +1,5 @@
 <template>
-  <div id="about-me" class="glass">
+  <div id="about-me">
     <h2 class="subtitle">Sobre mi</h2>
     <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna

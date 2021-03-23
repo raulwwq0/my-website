@@ -1,5 +1,5 @@
 <template>
-  <div id="skills" class="glass">
+  <div id="skills">
     <h2 class="subtitle">Mis Habilidades</h2>
     <p>
       Todas las habilidades las he aprendido de forma autodidacta y las he
