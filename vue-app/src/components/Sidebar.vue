@@ -71,7 +71,7 @@ export default {
       if (!isSidebarOFF.value) {
         sidebarTimeline
           .to("#sidebar", { width: "160px" })
-          .to(".icon-text", { display: "block" }, 0.1)
+          .to(".icon-text", { display: "block" }, 0.2)
           .to(".icon-text", { opacity: 1 })
           .to(".content", { marginLeft: "180px" }, 0)
           .to(".icon-wrap", { width: "150px"}, 0);
