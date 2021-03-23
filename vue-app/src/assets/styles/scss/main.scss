@@ -12,7 +12,7 @@ All these styles are imported into styles.css
 @use 'projects';
 @use 'contact';
 
-// Custom Fonts
+// Custom Font
 @font-face {
     src: url('../../fonts/Cambay.ttf');
     font-family: "Cambay";
@@ -23,10 +23,11 @@ All these styles are imported into styles.css
     padding: 0px;
     margin: 0px;
     text-decoration: none;
+    color: var.$font-color;
 }
 
 body {
-    background-color: var.$bg-color;
+    background-color: var.$main-color;
     overflow-x: hidden;
 }
 
@@ -40,7 +41,7 @@ body {
     flex-flow: column wrap;
     position: relative;
     margin-left: 60px;
-    width: 100%;
+    width: var.$all-width;
     height: auto;
 }
 
@@ -58,9 +59,15 @@ body {
 }
 
 .title{
-    margin-top: 50px;
-    margin-bottom: 30px;
     font-size: 50px;
+    background-color: var.$second-color;
+    box-shadow: var.$main-shadow;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+    padding-top: 50px;
 }
 
 .subtitle{
@@ -68,7 +75,7 @@ body {
 }
 
 .section-text{
-    font-size: 20px;
+    font-size: var.$font-size-1;
     margin-bottom: 70px;
 }
 
@@ -83,7 +90,7 @@ body {
     text-align: center;
     margin-top: 20px;
     padding: 10px;
-    color: white;
+    color: var.$second-color;
     font-family: var.$text-font;
     opacity: 0;
     transform: scale(0);
@@ -102,7 +109,7 @@ body {
         float: left;
         width: 10vw;
         height: 10vh;
-        border: 2px solid white;
+        border: 2px solid var.$second-color;
         border-radius: 15px;
     }
 }

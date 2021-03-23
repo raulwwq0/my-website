@@ -22,10 +22,12 @@
         border-top-left-radius: 9999px;
         border-bottom-left-radius: 9999px;
         background-color: #fff;
-        box-shadow: 0 8px 32px 0 rgba(0, 0 , 0, 0.37);
+        box-shadow: var.$main-shadow;
 
-        .title {
-            margin-top: 0px
+        .presentation-title {
+            font-size: 50px;
+            font-family: var.$text-font;            
+            margin-bottom: 30px;
         }
     }
 }
@@ -39,7 +41,7 @@
     border-radius: 20px;
     padding: 25px;
     background-color: #fff;
-    box-shadow: 0 8px 32px 0 rgba(0, 0 , 0, 0.37);
+    box-shadow: var.$main-shadow;
     
     .subtitle{
         margin: 0px;
@@ -52,14 +54,14 @@
         margin-top: 20px;
         display: block;
         float: left;
-        width: 100%;
+        width: var.$all-width;
         text-align: justify;
     }
 
     img{
         display: block;
         position: absolute;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: var.$main-shadow;
         top: -100px;
         right: -100px;
         border-radius: 99999px;
@@ -74,7 +76,7 @@
     left: 100px;
     width: 40%;
     background-color: #fff;
-    box-shadow: 0 8px 32px 0 rgba(0, 0 , 0, 0.37);
+    box-shadow: var.$main-shadow;
     border-radius: 20px;
     padding: 25px;
 
@@ -90,14 +92,14 @@
         margin-bottom: 20px;
         display: block;
         float: left;
-        width: 100%;
+        width: var.$all-width;
         text-align: justify;
     }
 
     #skills-svg{
         display: flex;
         justify-content: space-around;
-        width: 100%;
+        width: var.$all-width;
 
         img{
             width: 50px;

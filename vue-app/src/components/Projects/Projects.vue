@@ -1,7 +1,7 @@
 <template>
   <h1 class="title">Proyectos</h1>
 
-  <p class="section-text">
+  <p id="projects-section-text" class="section-text">
     Esta es la lista de todos los proyectos que he realizado 
     desde mis comienzos como desarrollador web. 
 

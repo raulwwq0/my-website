@@ -16,7 +16,7 @@
               />
             </div>
           </a>
-          <p class="contact-icon-text linkedin-text">Raúl Aguilar García</p>
+          <p class="contact-icon-text linkedin-text">Raúl Aguilar</p>
         </div>
 
         <div

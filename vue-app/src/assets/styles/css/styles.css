@@ -36,7 +36,7 @@
 #sidebar #menu-icons .active {
   display: block;
   background-color: black;
-  color: white;
+  color: #ffffff;
   width: 38px;
   border-top-right-radius: 99px;
   border-bottom-right-radius: 99px;
@@ -80,8 +80,10 @@
   background-color: #fff;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
-#presentation-banner #presentation-text .title {
-  margin-top: 0px;
+#presentation-banner #presentation-text .presentation-title {
+  font-size: 50px;
+  font-family: Cambay;
+  margin-bottom: 30px;
 }
 
 #about-me {
@@ -111,7 +113,7 @@
 #about-me img {
   display: block;
   position: absolute;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   top: -100px;
   right: -100px;
   border-radius: 99999px;
@@ -153,8 +155,21 @@
   height: 50px;
 }
 
+#projects-section-text {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  padding: 15px;
+  width: 85%;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+}
+
 #projects {
-  width: 90%;
+  width: 85%;
   margin-left: 100px;
   margin-right: 100px;
   display: grid;
@@ -162,6 +177,10 @@
   grid-gap: 4%;
   align-items: center;
   font-family: Cambay;
+  background-color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  padding: 15px;
 }
 #projects img {
   width: 100%;
@@ -175,7 +194,7 @@
   width: 100%;
   height: 300px;
   border-radius: 20px;
-  box-shadow: 0px 0px 5px #747474;
+  box-shadow: 0px 0px 7px #ccc;
   opacity: 0;
 }
 #projects .project .project-info {
@@ -195,14 +214,15 @@
   align-items: center;
   justify-content: center;
   height: 50px;
-  color: white;
+  color: #ffffff;
 }
 #projects .project .project-info .project-title h2 {
   font-size: 1vw;
   width: 100%;
+  color: #ffffff;
 }
 #projects .project .project-info p {
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 15px;
 }
@@ -212,23 +232,25 @@
   width: 60%;
 }
 #projects .project .project-info form button {
-  color: white;
+  color: #ffffff;
   padding: 15px;
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 15px;
   font-size: 15px;
   transition: all 300ms ease-in-out;
 }
 #projects .project .project-info button:hover {
   color: black;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 #contact {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   justify-items: center;
+  width: 100%;
 }
 #contact .first-p {
   font-family: Cambay;
@@ -239,8 +261,16 @@
 #contact #email-form {
   display: flex;
   flex-flow: column wrap;
+  position: relative;
   align-items: center;
-  width: 65%;
+  width: 75%;
+  height: 515px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  margin-top: 10vh;
+  padding: 15px;
+  padding-right: 25px;
 }
 #contact #email-form input[type=text],
 #contact #email-form textarea {
@@ -250,7 +280,8 @@
   margin-bottom: 20px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  padding: 15px;
+  padding: 15px 0px;
+  padding-left: 10px;
   outline: none;
 }
 #contact #email-form input[type=text]::placeholder,
@@ -266,7 +297,7 @@
   min-height: 200px;
 }
 #contact #email-form input[type=submit] {
-  background-color: white;
+  background-color: #ffffff;
   width: 25%;
   font-family: Cambay;
   justify-self: center;
@@ -279,7 +310,7 @@
 #contact #email-form input[type=submit]:hover {
   background-color: black;
   border: 1px solid black;
-  color: white;
+  color: #ffffff;
 }
 #contact #email-form #email-sent {
   background-color: #00b300;
@@ -291,6 +322,11 @@
   display: grid;
   grid-template-rows: 30% auto;
   width: 75%;
+  background-color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  margin-top: 10vh;
+  padding: 15px;
 }
 #contact #different-ways-contact #contact-ways {
   display: flex;
@@ -337,6 +373,7 @@ All these styles are imported into styles.css
   padding: 0px;
   margin: 0px;
   text-decoration: none;
+  color: #414141;
 }
 
 body {
@@ -372,9 +409,15 @@ body {
 }
 
 .title {
-  margin-top: 50px;
-  margin-bottom: 30px;
   font-size: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 20%;
+  text-align: center;
+  padding: 15px;
+  padding-top: 50px;
 }
 
 .subtitle {
@@ -397,7 +440,7 @@ body {
   text-align: center;
   margin-top: 20px;
   padding: 10px;
-  color: white;
+  color: #ffffff;
   font-family: Cambay;
   opacity: 0;
   transform: scale(0);
@@ -416,7 +459,7 @@ body {
   float: left;
   width: 10vw;
   height: 10vh;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 15px;
 }
 

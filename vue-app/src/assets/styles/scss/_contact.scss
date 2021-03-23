@@ -3,11 +3,13 @@
 #contact{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     justify-items: center;
+    width: var.$all-width;
 
     .first-p{
         font-family: var.$text-font;
-        font-size: 20px;
+        font-size: var.$font-size-1;
         justify-self: center;
         margin-bottom: 20px;
     }
@@ -15,18 +17,27 @@
     #email-form{
         display: flex;
         flex-flow:  column wrap;
+        position: relative;
         align-items: center;
-        width: 65%;
+        width: 75%;
+        height: 515px;
+        background-color: var.$second-color;
+        box-shadow: var.$main-shadow;
+        border-radius: 20px;
+        margin-top: 10vh;
+        padding: 15px;
+        padding-right: 25px;
 
         input[type=text],
         textarea{
             font-family: var.$text-font;
             font-size: 14px;
-            width: 100%;
+            width: var.$all-width;
             margin-bottom: 20px;
             border-radius: 10px;
             border: 1px solid #ccc;
-            padding: 15px;
+            padding: 15px 0px;
+            padding-left: 10px;
             outline: none;
         }
 
@@ -46,7 +57,7 @@
         }
 
         input[type=submit]{
-            background-color: white;
+            background-color: var.$second-color;
             width: 25%;
             font-family: var.$text-font;
             justify-self: center;
@@ -60,7 +71,7 @@
         input[type=submit]:hover{
             background-color: black;
             border: 1px solid black;
-            color: white;
+            color: var.$second-color;
         }
 
         #email-sent{
@@ -76,6 +87,11 @@
         display: grid;
         grid-template-rows: 30% auto;
         width: 75%;
+        background-color: var.$second-color;
+        box-shadow: var.$main-shadow;
+        border-radius: 20px;
+        margin-top: 10vh;
+        padding: 15px;
 
         #contact-ways{
             display: flex;
@@ -103,7 +119,6 @@
             .contact-icon-text{
                 font-family: var.$text-font;
                 text-align: center;
-                //rotate: -90deg !important;
                 opacity: 0;
             }
         }
