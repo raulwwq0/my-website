@@ -42,7 +42,7 @@ body {
     position: relative;
     margin-left: 60px;
     width: var.$all-width;
-    height: auto;
+    height: 100vh;
 }
 
 .icons{
@@ -81,14 +81,19 @@ body {
 
 .advice{
     display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 20px;
     align-items: center;
     justify-self: center;
     justify-content: center;
-    width: 50%;
+    width: 30%;
     height: 30px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 20px;
     padding: 10px;
     color: var.$second-color;
     font-family: var.$text-font;

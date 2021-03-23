@@ -5,11 +5,11 @@
     <input type="text" name="user_email" placeholder="Correo" required />
     <textarea name="message" placeholder="Mensaje" required />
     <input type="submit" value="Enviar" />
-
-    <div class="advice" id="email-sent">El correo se ha enviado con éxito</div>
-
-    <div class="advice" id="email-fail">El correo no se ha podido enviar</div>
   </form>
+
+  <div class="advice" id="email-sent">El correo se ha enviado con éxito</div>
+
+  <div class="advice" id="email-fail">El correo no se ha podido enviar</div>
 </template>
 
 <script>
@@ -24,30 +24,23 @@ export default {
     const user_id = process.env.VUE_APP_EMAILJS_USER_ID;
 
     function sendEmail(e) {
-      emailjs
-        .sendForm(
-          service_id,
-          template_id,
-          e.target,
-          user_id
-        )
-        .then(
-          (result) => {
-            console.log("Email sent successfully", result.status, result.text);
+      emailjs.sendForm(service_id, template_id, e.target, user_id).then(
+        (result) => {
+          console.log("Email sent successfully", result.status, result.text);
 
-            document.getElementById("email-form").reset();
+          document.getElementById("email-form").reset();
 
-            gsap.to("#email-sent", { opacity: 1, scale: 1.2, ease: "bounce" });
-            gsap.to("#email-sent", { opacity: 0, scale: 0, delay: 5 });
-          },
-          (error) => {
-            console.log("Email sent went wrong", error);
-            console.log(user_id);
+          gsap.to("#email-sent", { opacity: 1, scale: 1.2, ease: "bounce" });
+          gsap.to("#email-sent", { opacity: 0, scale: 0, delay: 5 });
+        },
+        (error) => {
+          console.log("Email sent went wrong", error);
+          console.log(user_id);
 
-            gsap.to("#email-fail", { opacity: 1, scale: 1.2, ease: "bounce" });
-            gsap.to("#email-fail", { opacity: 0, scale: 0, delay: 5 });
-          }
-        );
+          gsap.to("#email-fail", { opacity: 1, scale: 1.2, ease: "bounce" });
+          gsap.to("#email-fail", { opacity: 0, scale: 0, delay: 5 });
+        }
+      );
     }
 
     return { sendEmail };

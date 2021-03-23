@@ -48,7 +48,7 @@
             border-top-right-radius: 99px;
             border-bottom-right-radius: 99px;
             img{
-                filter: invert(100%);
+                filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
             }
             
             //padding: 10px;
@@ -68,5 +68,8 @@
         margin-left: 20px;
     }
 
+    #github-icon:hover {
+        filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
+    }
     
 }

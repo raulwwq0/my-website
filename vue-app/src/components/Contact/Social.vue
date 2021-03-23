@@ -1,109 +1,96 @@
 <template>
-    <div id="different-ways-contact">
-      <p class="first-p">También puedes encontrarme en:</p>
-      <div id="contact-ways">
-        <div
-          class="contact-icon-wrap"
-          @mouseover="iconHoverON('linkedin')"
-          @mouseout="iconHoverOFF('linkedin')"
-        >
-          <a href="https://www.linkedin.com/in/agraul21/" target="_blank">
-            <div class="svg-wrap linkedin">
-              <img
-                class="contact-icons linkedin-svg"
-                src="../../assets/images/logo/linkedin.svg"
-                alt="Linkedin"
-              />
-            </div>
-          </a>
-          <p class="contact-icon-text linkedin-text">Raúl Aguilar</p>
-        </div>
+  <div id="different-ways-contact">
+    <p class="first-p">También puedes encontrarme en:</p>
+    <div id="contact-ways">
+      <div class="contact-icon-wrap">
+        <a href="https://www.linkedin.com/in/agraul21/" target="_blank">
+          <img
+            class="contact-icons linkedin-svg"
+            src="../../assets/images/logo/linkedin.svg"
+            alt="Linkedin"
+            @mouseover="iconHoverON('linkedin')"
+            @mouseout="iconHoverOFF('linkedin')"
+          />
+        </a>
+        <p class="contact-icon-text linkedin-text">Raúl Aguilar</p>
+      </div>
 
-        <div
-          class="contact-icon-wrap"
-          @mouseover="iconHoverON('instagram')"
-          @mouseout="iconHoverOFF('instagram')"
-        >
-          <a href="https://www.instagram.com/raulwwq0/" target="_blank">
-            <div class="svg-wrap instagram">
-              <img
-                class="contact-icons instagram-svg"
-                src="../../assets/images/logo/instagram.svg"
-                alt="Instagram"
-              />
-            </div>
-          </a>
-          <p class="contact-icon-text instagram-text">@raulwwq0</p>
-        </div>
+      <div class="contact-icon-wrap">
+        <a href="https://www.instagram.com/raulwwq0/" target="_blank">
+          <img
+            class="contact-icons instagram-svg"
+            src="../../assets/images/logo/instagram.svg"
+            alt="Instagram"
+            @mouseover="iconHoverON('instagram')"
+            @mouseout="iconHoverOFF('instagram')"
+          />
+        </a>
+        <p class="contact-icon-text instagram-text">@raulwwq0</p>
+      </div>
 
-        <div
-          class="contact-icon-wrap"
-          @mouseover="iconHoverON('telegram')"
-          @mouseout="iconHoverOFF('telegram')"
-        >
-          <a href="https://t.me/rau_ag21" target="_blank">
-            <div class="svg-wrap telegram">
-              <img
-                class="contact-icons telegram-svg"
-                src="../../assets/images/logo/telegram.svg"
-                alt="Telegram"
-              />
-            </div>
-          </a>
-          <p class="contact-icon-text telegram-text">@rau_ag21</p>
-        </div>
+      <div class="contact-icon-wrap">
+        <a href="https://t.me/rau_ag21" target="_blank">
+          <img
+            class="contact-icons telegram-svg"
+            src="../../assets/images/logo/telegram.svg"
+            alt="Telegram"
+            @mouseover="iconHoverON('telegram')"
+            @mouseout="iconHoverOFF('telegram')"
+          />
+        </a>
+        <p class="contact-icon-text telegram-text">@rau_ag21</p>
+      </div>
 
-        <div
-          class="contact-icon-wrap"
+      <div class="contact-icon-wrap">
+        <img
+          class="contact-icons discord-svg"
+          src="../../assets/images/logo/discord.svg"
+          alt="Discord"
+          @click="copyDiscordUsername('.discord-text')"
           @mouseover="iconHoverON('discord')"
           @mouseout="iconHoverOFF('discord')"
-        >
-          <div class="svg-wrap discord">
-            <img
-              class="contact-icons discord-svg"
-              src="../../assets/images/logo/discord.svg"
-              alt="Discord"
-              @click="copyDiscordUsername('.discord-text')"
-            />
-          </div>
-          <p class="contact-icon-text discord-text">rau_ag21 #7817</p>
-        </div>
-      </div>
-
-      <div class="advice" id="tag-was-copied">
-        Has copiado mi tag de Discord al portapapeles
+        />
+        <p class="contact-icon-text discord-text">rau_ag21 #7817</p>
       </div>
     </div>
+  </div>
+
+  <div class="advice" id="tag-was-copied">
+    Has copiado mi tag de Discord al portapapeles
+  </div>
 </template>
 
 <script>
 import gsap from "gsap";
 
 export default {
-    name: 'Social',
-    setup() {
+  name: "Social",
+  setup() {
     function iconHoverON(icon) {
-      let divName = "." + icon;
       let imgName = "." + icon + "-svg";
       let textName = "." + icon + "-text";
 
       const iconTL = gsap.timeline({ defaults: { duration: 0.3 } });
 
       iconTL
-        .to(divName, { background: "black" })
-        .to(imgName, { filter: "invert(100%)" }, 0)
+        .to(
+          imgName,
+          {
+            filter:
+              "invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5)",
+          },
+          0
+        )
         .to(textName, { y: "50px", opacity: 1 }, 0);
     }
 
     function iconHoverOFF(icon) {
-      let divName = "." + icon;
       let imgName = "." + icon + "-svg";
       let textName = "." + icon + "-text";
 
       const iconTL = gsap.timeline({ defaults: { duration: 0.3 } });
 
       iconTL
-        .to(divName, { background: "transparent" })
         .to(imgName, { filter: "invert(0%)" }, 0)
         .to(textName, { y: "0px", opacity: 0 }, 0);
     }
@@ -125,5 +112,5 @@ export default {
 
     return { iconHoverON, iconHoverOFF, copyDiscordUsername };
   },
-}
+};
 </script>

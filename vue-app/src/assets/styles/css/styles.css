@@ -42,7 +42,7 @@
   border-bottom-right-radius: 99px;
 }
 #sidebar #menu-icons .active img {
-  filter: invert(100%);
+  filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
 }
 #sidebar #hamburger {
   cursor: pointer;
@@ -54,6 +54,9 @@
   font-family: Cambay;
   font-size: 20px;
   margin-left: 20px;
+}
+#sidebar #github-icon:hover {
+  filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
 }
 
 #presentation-banner {
@@ -310,16 +313,11 @@
   border: 1px solid black;
   color: #ffffff;
 }
-#contact #email-form #email-sent {
-  background-color: #00b300;
-}
-#contact #email-form #email-fail {
-  background-color: red;
-}
 #contact #different-ways-contact {
   display: grid;
   grid-template-rows: 30% auto;
   width: 75%;
+  height: 200px;
   background-color: #ffffff;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 20px;
@@ -338,14 +336,7 @@
   cursor: pointer;
   width: 20%;
 }
-#contact #different-ways-contact .contact-icon-wrap .svg-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 9999px;
-  padding: 15px;
-}
-#contact #different-ways-contact .contact-icon-wrap .svg-wrap .contact-icons {
+#contact #different-ways-contact .contact-icon-wrap .contact-icons {
   width: 50px;
 }
 #contact #different-ways-contact .contact-icon-wrap .contact-icon-text {
@@ -353,8 +344,14 @@
   text-align: center;
   opacity: 0;
 }
-#contact #different-ways-contact #tag-was-copied {
+#contact #tag-was-copied {
   background-color: #00b300;
+}
+#contact #email-sent {
+  background-color: #00b300;
+}
+#contact #email-fail {
+  background-color: red;
 }
 
 /*
@@ -390,7 +387,7 @@ body {
   position: relative;
   margin-left: 60px;
   width: 100%;
-  height: auto;
+  height: 100vh;
 }
 
 .icons {
@@ -429,14 +426,19 @@ body {
 
 .advice {
   display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 20px;
   align-items: center;
   justify-self: center;
   justify-content: center;
-  width: 50%;
+  width: 30%;
   height: 30px;
   border-radius: 10px;
   text-align: center;
-  margin-top: 20px;
   padding: 10px;
   color: #ffffff;
   font-family: Cambay;

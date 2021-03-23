@@ -49,7 +49,7 @@
     <div id="social-icons">
       <a href="https://github.com/raulwwq0" target="_blank">
         <div class="icon-wrap">
-          <img class="icons" src="../assets/images/logo/github.svg" alt="GitHub" />
+          <img id="github-icon" class="icons" src="../assets/images/logo/github.svg" alt="GitHub" />
           <p class="icon-text">GitHub</p>
         </div>
       </a>
