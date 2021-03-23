@@ -68,8 +68,15 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  right: 0;
   margin: auto;
+  padding-right: 20vw;
+  width: 70%;
   height: 300px;
+  text-align: right;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 #presentation-banner #presentation-text .title {
   margin-top: 0px;
@@ -83,7 +90,7 @@
   width: 30%;
   border-radius: 20px;
   padding: 25px;
-  box-shadow: 0 8px 32px 0 rgba(31, 133, 44, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 #about-me .subtitle {
   margin: 0px;
@@ -114,7 +121,7 @@
   top: 170vh;
   left: 100px;
   width: 40%;
-  box-shadow: 0 8px 32px 0 rgba(31, 133, 44, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   padding: 25px;
 }
@@ -405,7 +412,7 @@ body {
   float: left;
   width: 10vw;
   height: 10vh;
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 15px;
 }
 
