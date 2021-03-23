@@ -1,5 +1,5 @@
 <template>
-  <aside id="sidebar">
+  <aside id="sidebar" class="glass">
     <div id="hamburger" @click="sidebarChangeStatus()">
       <div class="hamburger-wrap">
         <img
