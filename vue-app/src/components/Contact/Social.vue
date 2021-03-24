@@ -72,16 +72,19 @@ export default {
 
       const iconTL = gsap.timeline({ defaults: { duration: 0.3 } });
 
-      iconTL
-        .to(
-          imgName,
-          {
-            filter:
-              "invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5)",
-          },
-          0
-        )
-        .to(textName, { y: "50px", opacity: 1 }, 0);
+      if(screen.width > 900){      
+        iconTL
+          .to(
+            imgName,
+            {
+              filter:
+                "invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5)",
+            },
+            0
+          )
+          .to(textName, { y: "50px", opacity: 1 }, 0);
+        
+      }
     }
 
     function iconHoverOFF(icon) {
@@ -90,9 +93,12 @@ export default {
 
       const iconTL = gsap.timeline({ defaults: { duration: 0.3 } });
 
-      iconTL
-        .to(imgName, { filter: "invert(0%)" }, 0)
-        .to(textName, { y: "0px", opacity: 0 }, 0);
+      if(screen.width > 900){
+        iconTL
+          .to(imgName, { filter: "invert(0%)" }, 0)
+          .to(textName, { y: "0px", opacity: 0 }, 0);
+      }
+
     }
 
     function copyDiscordUsername(className) {

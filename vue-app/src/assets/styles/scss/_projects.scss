@@ -1,32 +1,30 @@
 @use 'var';
 
 #projects-section-text{
+    align-self: center;
     display: flex;
-    align-items: center;
     background-color: var.$second-color;
     box-shadow: var.$main-shadow;
     border-radius: 20px;
     padding: 15px;
-    width: 85%;
+    width: var.$main-width;
     margin-top: 70px;
     margin-bottom: 100px;
-    margin-left: 100px;
 }
 
 #projects{
-    width: 85%;
-    margin-left: 100px;
-    margin-right: 100px;
+    align-self: center;
+    width: var.$main-width;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 4%;
+    grid-gap: 20px;
     align-items: center;
     font-family: var.$text-font;
     background-color: var.$second-color;
     box-shadow: var.$main-shadow;
     border-radius: 20px;
     padding: 15px;
-
+    height: auto;
 
     img{
         width: var.$all-width;

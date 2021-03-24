@@ -19,7 +19,7 @@
         flex-flow:  column wrap;
         position: relative;
         align-items: center;
-        width: 75%;
+        width: var.$main-width;
         height: 515px;
         background-color: var.$second-color;
         box-shadow: var.$main-shadow;
@@ -78,7 +78,7 @@
     #different-ways-contact{
         display: grid;
         grid-template-rows: 30% auto;
-        width: 75%;
+        width: var.$main-width;
         height: 200px;
         background-color: var.$second-color;
         box-shadow: var.$main-shadow;
@@ -97,6 +97,11 @@
             align-items: center;
             cursor: pointer;
             width: 20%;
+
+            a{
+                height: 50px;
+                width: 50px;
+            }
 
 
             .contact-icons{

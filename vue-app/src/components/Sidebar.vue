@@ -49,7 +49,12 @@
     <div id="social-icons">
       <a href="https://github.com/raulwwq0" target="_blank">
         <div class="icon-wrap">
-          <img id="github-icon" class="icons" src="../assets/images/logo/github.svg" alt="GitHub" />
+          <img
+            id="github-icon"
+            class="icons"
+            src="../assets/images/logo/github.svg"
+            alt="GitHub"
+          />
           <p class="icon-text">GitHub</p>
         </div>
       </a>
@@ -68,26 +73,45 @@ export default {
 
     function sidebarChangeStatus() {
       const sidebarTimeline = gsap.timeline({ defaults: { duration: 0.3 } });
-      if (!isSidebarOFF.value) {
-        sidebarTimeline
-          .to("#sidebar", { width: "160px" })
-          .to(".icon-text", { display: "block" }, 0.2)
-          .to(".icon-text", { opacity: 1 })
-          .to(".content", { marginLeft: "180px" }, 0)
-          .to(".icon-wrap", { width: "150px"}, 0);
+
+      if (screen.width > 900) {
+        if (!isSidebarOFF.value) {
+          sidebarTimeline
+            .to("#sidebar", { width: "160px" })
+            .to(".icon-text", { display: "block" }, 0.2)
+            .to(".icon-text", { opacity: 1 })
+            .to(".content", { marginLeft: "160px" }, 0)
+            .to(".icon-wrap", { width: "150px" }, 0);
+        } else {
+          sidebarTimeline
+            .to(".icon-text", { opacity: 0, display: "none" })
+            .to(".icon-wrap", { width: "40px" }, 0.3)
+            .to("#sidebar", { width: "40px" }, 0.2)
+            .to(".content", { marginLeft: "40px" }, "<0");
+        }
       } else {
-        sidebarTimeline
-          .to(".icon-text", { opacity: 0, display: "none" })
-          .to(".icon-wrap", { width: "40px"}, 0.3)
-          .to("#sidebar", { width: "40px" }, 0.2)
-          .to(".content", { marginLeft: "60px" }, "<0");
+        if (!isSidebarOFF.value) {
+          sidebarTimeline
+            .to("#sidebar", { width: "160px" })
+            .to(".icon-text", { display: "block" }, 0.2)
+            .to(".icon-text", { opacity: 1 })
+            .to(".icon-wrap", { width: "150px" }, 0)
+            .to("#sidebar", { boxShadow: "0 8px 32px 0 rgba(0, 0 , 0, 0.37)"}, 0);
+        } else {
+          sidebarTimeline
+            .to(".icon-text", { opacity: 0, display: "none" })
+            .to("#sidebar", { boxShadow: "0 0 0 0 rgba(0, 0 , 0, 0)"}, 0)
+            .to(".icon-wrap", { width: "40px" }, 0.3)
+            .to("#sidebar", { width: "40px" }, 0.2);
+        }
       }
+
       isSidebarOFF.value = !isSidebarOFF.value;
     }
     return { isSidebarOFF, sidebarChangeStatus };
   },
-  mounted(){
+  mounted() {
     this.sidebarChangeStatus();
-  }
+  },
 };
 </script>

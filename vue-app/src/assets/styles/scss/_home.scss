@@ -3,7 +3,7 @@
 #presentation-banner{
     display: block;
     position: relative;
-    width: 100vw;
+    width: var.$all-width;
     height: 100vh;
 
     #presentation-text {
@@ -15,8 +15,8 @@
         bottom: 0;
         right: 0;
         margin: auto;
-        padding-right: 20vw;
-        width: 70%;
+        padding-right: 7.5%;
+        width: var.$main-width;
         height: 300px;
         text-align: right;
         border-top-left-radius: 9999px;
@@ -34,9 +34,11 @@
 
 #about-me,
 #skills{
-    margin-left: 100px;
+    display: flex;
+    flex-flow: column wrap;
+    align-self: center;
     margin-bottom: 20vh;
-    width: 85%;
+    width: var.$main-width;
     border-radius: 20px;
     padding: 25px;
     background-color: #fff;
@@ -74,8 +76,8 @@
         right: 0px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
-        width: auto;
-        height: 400px;
+        width: 25%;
+        height: 100%;
     }
 }
 
