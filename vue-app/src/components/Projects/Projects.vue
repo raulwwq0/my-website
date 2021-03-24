@@ -17,7 +17,7 @@
       :key="project._id"
     >
       <img
-        :src="'http://localhost:3900/api/get-image/' + project.image"
+        :src="api + '/get-image/' + project.image"
         :alt="project.title"
       />
 
@@ -48,6 +48,8 @@ export default {
     };
   },
   setup() {
+    const api = process.env.VUE_APP_API;
+
     function infoHoverON(_id) {
       let classID = ".project-info-" + _id;
       gsap.to(classID, {
@@ -74,7 +76,7 @@ export default {
     }
 
     function getProjects() {
-      axios.get("http://localhost:3900/api/projects").then((res) => {
+      axios.get(api + '/projects').then((res) => {
         if (res.data.status == "success") {
           this.projects = res.data.projects;
         }
@@ -84,10 +86,11 @@ export default {
       }
     }
 
-    return { infoHoverON, infoHoverOFF, entryAnimation, getProjects };
+    return { api, infoHoverON, infoHoverOFF, entryAnimation, getProjects };
   },
   mounted() {
     this.getProjects();
+    console.log(this.api);
   },
   updated() {
     this.entryAnimation();
