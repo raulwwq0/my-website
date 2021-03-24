@@ -90,7 +90,6 @@ export default {
   },
   mounted() {
     this.getProjects();
-    console.log(this.api);
   },
   updated() {
     this.entryAnimation();
