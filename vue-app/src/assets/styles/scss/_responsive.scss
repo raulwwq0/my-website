@@ -96,7 +96,7 @@
         font-size: 30px !important;
     }
     .subtitle{
-        font-size: 20px !important;
+        font-size: 4vw !important;
     }
 
     .title,
@@ -149,6 +149,10 @@
     }
 
     #contact{
+        .first-p{
+            height: 20px;
+            text-align: center;
+        }
 
         #email-form{
             input[type=submit]{
@@ -157,6 +161,8 @@
         }
 
         #different-ways-contact{
+            display: flex;
+            flex-flow: column wrap;
             margin-top: 5vh;
             height: auto;
 
@@ -168,12 +174,7 @@
                 margin-left: 5vw;
                 margin-bottom: 2vh;
 
-                .contact-icons{
-                    filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
-                }
-
                 .contact-icon-text{
-                    opacity: 1;
                     transform: translateX(50px);
                 }
             }

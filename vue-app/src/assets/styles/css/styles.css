@@ -437,7 +437,7 @@
   }
 
   .subtitle {
-    font-size: 20px !important;
+    font-size: 4vw !important;
   }
 
   .title,
@@ -479,10 +479,16 @@
     font-size: 3.5vw;
   }
 
+  #contact .first-p {
+    height: 20px;
+    text-align: center;
+  }
   #contact #email-form input[type=submit] {
     width: 100%;
   }
   #contact #different-ways-contact {
+    display: flex;
+    flex-flow: column wrap;
     margin-top: 5vh;
     height: auto;
   }
@@ -494,11 +500,7 @@
     margin-left: 5vw;
     margin-bottom: 2vh;
   }
-  #contact #different-ways-contact .contact-icon-wrap .contact-icons {
-    filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
-  }
   #contact #different-ways-contact .contact-icon-wrap .contact-icon-text {
-    opacity: 1;
     transform: translateX(50px);
   }
 }
