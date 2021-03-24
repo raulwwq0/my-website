@@ -4,6 +4,7 @@
 require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
+const path = require('path');
 
 // Express.js
 var app = express();
@@ -11,6 +12,7 @@ var app = express();
 // Middlewares
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../vue-app/dist/')));
 
 
 // CORS
@@ -23,6 +25,10 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vue-app/dist/index.html'));
+});
+
 var project_routes = require('./routes/project');
 
 app.use('/api', project_routes);
