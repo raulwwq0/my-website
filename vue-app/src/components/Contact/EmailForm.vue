@@ -19,9 +19,9 @@ import gsap from "gsap";
 export default {
   name: "EmailForm",
   setup() {
-    const service_id = process.env.VUE_APP_EMAILJS_SERVICE_ID;
-    const template_id = process.env.VUE_APP_EMAILJS_TEMPLATE_ID;
-    const user_id = process.env.VUE_APP_EMAILJS_USER_ID;
+    const service_id = process.env.EMAILJS_SERVICE_ID;
+    const template_id = process.env.EMAILJS_TEMPLATE_ID;
+    const user_id = process.env.EMAILJS_USER_ID;
 
     function sendEmail(e) {
       emailjs.sendForm(service_id, template_id, e.target, user_id).then(
