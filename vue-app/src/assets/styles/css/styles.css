@@ -440,6 +440,11 @@
     font-size: 4vw !important;
   }
 
+  .advice {
+    font-size: 2.5vw !important;
+    width: 62.5% !important;
+  }
+
   .title,
 #about-me,
 #skills,
@@ -502,6 +507,15 @@
   }
   #contact #different-ways-contact .contact-icon-wrap .contact-icon-text {
     transform: translateX(50px);
+  }
+  #contact #email-sent,
+#contact #email-fail {
+    top: 30vh !important;
+    bottom: 0px !important;
+    margin: auto;
+  }
+  #contact #tag-was-copied {
+    bottom: -2vh !important;
   }
 }
 /*
