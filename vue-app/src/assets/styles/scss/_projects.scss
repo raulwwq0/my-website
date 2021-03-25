@@ -24,7 +24,7 @@
     box-shadow: var.$main-shadow;
     border-radius: 20px;
     padding: 15px;
-    height: auto;
+    min-height: 300px;
 
     img{
         width: var.$all-width;
