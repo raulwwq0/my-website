@@ -2,10 +2,9 @@
   <h1 class="title">Proyectos</h1>
 
   <p id="projects-section-text" class="section-text">
-    Esta es la lista de todos los proyectos que he realizado 
-    desde mis comienzos como desarrollador web. 
-
-    Visita mi GitHub para ver los repositorios de cada proyecto.
+    Esta es la lista de todos los proyectos que he realizado desde mis comienzos
+    como desarrollador web. Visita mi GitHub para ver los repositorios de cada
+    proyecto.
   </p>
 
   <div id="projects" v-if="projects">
@@ -18,7 +17,13 @@
     >
       <img
         :src="api + '/get-image/' + project.image"
-        :alt="project.title"
+        v-if="project.image"
+      />
+
+      <img
+        src="../../assets/images/loading.svg"
+        alt="Cargando..."
+        v-if="!project.image"
       />
 
       <div :class="'project-info project-info-' + project._id">
@@ -34,6 +39,12 @@
       </div>
     </article>
   </div>
+
+  <img
+  src="../../assets/images/loading.svg"
+  alt="Cargando..."
+  v-if="!projects"
+  />
 </template>
 
 <script>
@@ -68,15 +79,16 @@ export default {
       });
     }
 
-    function entryAnimation(){
-
-    gsap.fromTo(".project", {x: "-30px", opacity: 0}, {stagger: 0.2, x: "0px", opacity: 1})
-
-      
+    function entryAnimation() {
+      gsap.fromTo(
+        ".project",
+        { opacity: 0, duration: 0.5 },
+        { stagger: 0.2, opacity: 1, duration: 0.5 }
+      );
     }
 
     function getProjects() {
-      axios.get(api + '/projects').then((res) => {
+      axios.get(api + "/projects").then((res) => {
         if (res.data.status == "success") {
           this.projects = res.data.projects;
         }
@@ -93,6 +105,6 @@ export default {
   },
   updated() {
     this.entryAnimation();
-  }
+  },
 };
 </script>
