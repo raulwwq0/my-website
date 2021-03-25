@@ -31,6 +31,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
+app.get('/projects', (req, res) => {
+    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+});
+
 var project_routes = require('./routes/project');
 
 app.use('/api', project_routes);
