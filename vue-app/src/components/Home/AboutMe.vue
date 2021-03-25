@@ -23,7 +23,7 @@
         buen rato haciendo algo productivo.
       </p>
     </div>
-    <img src="../../assets/images/me.jpeg" />
+    <img src="../../assets/images/me.webp" />
   </div>
 </template>
 

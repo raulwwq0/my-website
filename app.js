@@ -3,6 +3,7 @@
 // Node modules
 require('dotenv').config();
 var express = require('express');
+var compression = require('compression');
 var bodyParser = require('body-parser');
 const path = require('path');
 
@@ -10,6 +11,7 @@ const path = require('path');
 var app = express();
 
 // Middlewares
+app.use(compression());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './vue-app/dist/')));
