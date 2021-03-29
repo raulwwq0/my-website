@@ -33,7 +33,7 @@
 
         <p>{{ project.description }}</p>
 
-        <form :action="project.link" target="_blank">
+        <form id="web-button" :action="project.link" target="_blank" v-if="project.link">
           <button>Ir a la web</button>
         </form>
       </div>
