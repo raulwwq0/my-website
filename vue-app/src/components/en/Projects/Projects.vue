@@ -87,7 +87,7 @@ export default {
     }
 
     function getProjects() {
-      axios.get(api + "/projects").then((res) => {
+      axios.get(api + "/get-projects").then((res) => {
         if (res.data.status == "success") {
           this.projects = res.data.projects;
         }
