@@ -136,7 +136,6 @@ export default {
 
     watchEffect(() => {
       lang.value = store.state.lang;
-      console.log(lang.value);
     });
 
     return { isSidebarOFF, sidebarChangeStatus, lang };
