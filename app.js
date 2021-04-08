@@ -27,15 +27,27 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.get('/*/home', (req, res) => {
+app.get('/es/home', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
-app.get('/*/projects', (req, res) => {
+app.get('/en/home', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
-app.get('/*/contact', (req, res) => {
+app.get('/es/projects', (req, res) => {
+    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+});
+
+app.get('/en/projects', (req, res) => {
+    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+});
+
+app.get('/es/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+});
+
+app.get('/en/contact', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
