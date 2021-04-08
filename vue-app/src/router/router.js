@@ -1,12 +1,19 @@
 import { createWebHistory, createRouter} from 'vue-router';
-import Home from '../components/Home/Home';
-import Projects from '../components/Projects/Projects';
-import Contact from '../components/Contact/Contact';
+import HomeES from '../components/es/Home/Home';
+import ProjectsES from '../components/es/Projects/Projects';
+import ContactES from '../components/es/Contact/Contact';
+import HomeEN from '../components/en/Home/Home';
+import ProjectsEN from '../components/en/Projects/Projects';
+import ContactEN from '../components/en/Contact/Contact';
 
 const routes = [
-    {path: '/', name: 'Home', component: Home},
-    {path: '/projects', name: 'Projects', component: Projects},
-    {path: '/contact', name: 'Contact', component: Contact},
+    {path: '/', redirect: '/es/home'},
+    {path: '/es/home', name: 'HomeES', component: HomeES},
+    {path: '/es/projects', name: 'ProjectsES', component: ProjectsES},
+    {path: '/es/contact', name: 'ContactES', component: ContactES},
+    {path: '/en/home', name: 'HomeEN', component: HomeEN},
+    {path: '/en/projects', name: 'ProjectsEN', component: ProjectsEN},
+    {path: '/en/contact', name: 'ContactEN', component: ContactEN},
 ]
 
 const router = createRouter({
@@ -14,7 +21,7 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach(function (to, from, next) { 
+router.beforeEach((to, from, next) => {
     window.scrollTo(0, 0);
     next();
 });

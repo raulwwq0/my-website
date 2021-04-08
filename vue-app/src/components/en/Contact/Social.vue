@@ -1,12 +1,12 @@
 <template>
   <div id="different-ways-contact">
-    <p class="first-p">También puedes encontrarme en:</p>
+    <p class="first-p">You can also find me here:</p>
     <div id="contact-ways">
       <div class="contact-icon-wrap">
         <a href="https://www.linkedin.com/in/agraul21/" target="_blank">
           <img
             class="contact-icons linkedin-svg"
-            src="../../assets/images/logo/linkedin.svg"
+            src="../../../assets/images/logo/linkedin.svg"
             alt="Linkedin"
             @mouseover="iconHoverON('linkedin')"
             @mouseout="iconHoverOFF('linkedin')"
@@ -19,7 +19,7 @@
         <a href="https://www.instagram.com/raulwwq0/" target="_blank">
           <img
             class="contact-icons instagram-svg"
-            src="../../assets/images/logo/instagram.svg"
+            src="../../../assets/images/logo/instagram.svg"
             alt="Instagram"
             @mouseover="iconHoverON('instagram')"
             @mouseout="iconHoverOFF('instagram')"
@@ -32,7 +32,7 @@
         <a href="https://t.me/rau_ag21" target="_blank">
           <img
             class="contact-icons telegram-svg"
-            src="../../assets/images/logo/telegram.svg"
+            src="../../../assets/images/logo/telegram.svg"
             alt="Telegram"
             @mouseover="iconHoverON('telegram')"
             @mouseout="iconHoverOFF('telegram')"
@@ -44,7 +44,7 @@
       <div class="contact-icon-wrap">
         <img
           class="contact-icons discord-svg"
-          src="../../assets/images/logo/discord.svg"
+          src="../../../assets/images/logo/discord.svg"
           alt="Discord"
           @click="copyDiscordUsername('.discord-text')"
           @mouseover="iconHoverON('discord')"
@@ -56,7 +56,7 @@
   </div>
 
   <div class="advice" id="tag-was-copied">
-    Has copiado mi tag de Discord al portapapeles
+    You have copied my discord tag to your clipboard
   </div>
 </template>
 

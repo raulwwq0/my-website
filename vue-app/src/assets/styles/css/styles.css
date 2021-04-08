@@ -35,11 +35,8 @@
 }
 #sidebar #menu-icons .active {
   display: block;
-  background-color: black;
   color: #ffffff;
   width: 38px;
-  border-top-right-radius: 99px;
-  border-bottom-right-radius: 99px;
 }
 #sidebar #menu-icons .active img {
   filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
@@ -54,6 +51,10 @@
   font-family: Cambay, Arial, sans-serif;
   font-size: 20px;
   margin-left: 20px;
+}
+#sidebar .icon-text span {
+  display: flex;
+  height: 25px;
 }
 #sidebar #github-icon:hover {
   filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
@@ -498,15 +499,24 @@
     height: auto;
   }
   #contact #different-ways-contact .contact-icon-wrap {
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-areas: "img" "text";
+    grid-gap: 2vh;
     width: 100%;
-    height: 70px;
+    height: auto;
+    justify-content: center;
     align-items: center;
-    margin-left: 5vw;
     margin-bottom: 2vh;
   }
+  #contact #different-ways-contact .contact-icon-wrap a,
+#contact #different-ways-contact .contact-icon-wrap .contact-icons {
+    grid-area: img;
+    justify-self: center;
+  }
   #contact #different-ways-contact .contact-icon-wrap .contact-icon-text {
-    transform: translateX(50px);
+    grid-area: text;
+    transform: translate(0px, 0px);
+    height: 20px;
   }
   #contact #email-sent,
 #contact #email-fail {
@@ -629,6 +639,69 @@ body {
   height: 10vh;
   border: 0.15vw solid #ffffff;
   border-radius: 15px;
+}
+
+#options-buttons {
+  display: flex;
+  position: absolute;
+  top: 200px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-family: Cambay, Arial, sans-serif;
+  z-index: 10;
+  padding: 15px;
+}
+#options-buttons #lang-switcher {
+  display: flex;
+  align-items: center;
+}
+#options-buttons #lang-switcher span {
+  height: 20px;
+}
+#options-buttons #lang-switcher span img {
+  width: 20px;
+  height: 20px;
+}
+#options-buttons #lang-switcher input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+#options-buttons #lang-switcher input[type=checkbox]:focus {
+  outline: 0;
+}
+#options-buttons #lang-switcher .toggle {
+  height: 20px;
+  width: 35px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  margin: 0 10px;
+  border: 2px solid #efefef;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+#options-buttons #lang-switcher .toggle:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 5px;
+  background: #2ecc71;
+  box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+}
+#options-buttons #lang-switcher .toggle:checked:after {
+  transform: translatex(15px);
 }
 
 /*# sourceMappingURL=styles.css.map */

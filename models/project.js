@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 var ProjectSchema = Schema({
     title: String,
-    description: String,
+    description_es: String,
+    description_en: String,
     link: String,
     image: String,
 });

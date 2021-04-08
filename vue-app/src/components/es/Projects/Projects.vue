@@ -21,7 +21,7 @@
       />
 
       <img
-        src="../../assets/images/loading.svg"
+        src="../../../assets/images/loading.svg"
         alt="Cargando..."
         v-if="!project.image"
       />
@@ -31,7 +31,7 @@
           <h2>{{ project.title }}</h2>
         </div>
 
-        <p>{{ project.description }}</p>
+        <p>{{ project.description_es }}</p>
 
         <form id="web-button" :action="project.link" target="_blank" v-if="project.link">
           <button>Ir a la web</button>
@@ -41,7 +41,7 @@
   </div>
 
   <img
-  src="../../assets/images/loading.svg"
+  src="../../../assets/images/loading.svg"
   alt="Cargando..."
   v-if="!projects"
   />

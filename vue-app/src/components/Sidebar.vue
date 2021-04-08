@@ -16,33 +16,43 @@
         />
       </div>
     </div>
+    <Buttons />
     <div id="menu-icons">
-      <router-link to="/" exact-active-class="active">
+      <router-link :to="`/${lang}/home`" exact-active-class="active">
         <div class="icon-wrap">
           <img class="icons" src="../assets/images/home.svg" alt="Inicio" />
-          <p class="icon-text">Inicio</p>
+          <p class="icon-text">
+            <span v-if="lang === 'es'">Inicio</span>
+            <span v-if="lang === 'en'">Home</span>
+          </p>
         </div>
       </router-link>
 
-      <router-link to="/projects" exact-active-class="active">
+      <router-link :to="`/${lang}/projects`" exact-active-class="active">
         <div class="icon-wrap">
           <img
             class="icons"
             src="../assets/images/projects.svg"
             alt="Proyectos"
           />
-          <p class="icon-text">Proyectos</p>
+          <p class="icon-text">
+            <span v-if="lang === 'es'">Proyectos</span>
+            <span v-if="lang === 'en'">Projects</span>
+          </p>
         </div>
       </router-link>
 
-      <router-link to="/contact" exact-active-class="active">
+      <router-link :to="`/${lang}/contact`" exact-active-class="active">
         <div class="icon-wrap">
           <img
             class="icons"
             src="../assets/images/contact.svg"
             alt="Contacto"
           />
-          <p class="icon-text">Contacto</p>
+          <p class="icon-text">
+            <span v-if="lang === 'es'">Contacto</span>
+            <span v-if="lang === 'en'">Contact</span>
+          </p>
         </div>
       </router-link>
     </div>
@@ -63,11 +73,16 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import gsap from "gsap";
+import store from "../store";
+import Buttons from "./Buttons";
 
 export default {
   name: "Sidebar",
+  components: {
+    Buttons,
+  },
   setup() {
     var isSidebarOFF = ref(true);
 
@@ -80,11 +95,13 @@ export default {
             .to("#sidebar", { width: "160px" })
             .to(".icon-text", { display: "block" }, 0.2)
             .to(".icon-text", { opacity: 1 })
+            .to("#options-buttons", { display: "flex", opacity: 1 }, "<0")
             .to(".content", { marginLeft: "160px" }, 0)
             .to(".icon-wrap", { width: "150px" }, 0);
         } else {
           sidebarTimeline
-            .to(".icon-text", { opacity: 0, display: "none" })
+            .to("#options-buttons", { display: "none", opacity: 0 })
+            .to(".icon-text", { opacity: 0, display: "none" }, 0)
             .to(".icon-wrap", { width: "40px" }, 0.3)
             .to("#sidebar", { width: "40px" }, 0.2)
             .to(".content", { marginLeft: "40px" }, "<0");
@@ -95,20 +112,34 @@ export default {
             .to("#sidebar", { width: "160px" })
             .to(".icon-text", { display: "block" }, 0.2)
             .to(".icon-text", { opacity: 1 })
+            .to("#options-buttons", { display: "flex", opacity: 1 }, "<0")
             .to(".icon-wrap", { width: "150px" }, 0)
-            .to("#sidebar", { boxShadow: "0 8px 32px 0 rgba(0, 0 , 0, 0.37)"}, 0);
+            .to(
+              "#sidebar",
+              { boxShadow: "0 8px 32px 0 rgba(0, 0 , 0, 0.37)" },
+              0
+            );
         } else {
           sidebarTimeline
-            .to(".icon-text", { opacity: 0, display: "none" })
-            .to("#sidebar", { boxShadow: "0 0 0 0 rgba(0, 0 , 0, 0)"}, 0)
+            .to("#options-buttons", { display: "none", opacity: 0 })
+            .to(".icon-text", { opacity: 0, display: "none" }, 0)
             .to(".icon-wrap", { width: "40px" }, 0.3)
-            .to("#sidebar", { width: "40px" }, 0.2);
+            .to("#sidebar", { width: "40px" }, 0.2)
+            .to("#sidebar", { boxShadow: "0 0 0 0 rgba(0, 0 , 0, 0)" }, 0);
         }
       }
 
       isSidebarOFF.value = !isSidebarOFF.value;
     }
-    return { isSidebarOFF, sidebarChangeStatus };
+
+    var lang = ref(store.state.lang);
+
+    watchEffect(() => {
+      lang.value = store.state.lang;
+      console.log(lang.value);
+    });
+
+    return { isSidebarOFF, sidebarChangeStatus, lang };
   },
   mounted() {
     this.sidebarChangeStatus();

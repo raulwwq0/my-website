@@ -172,15 +172,26 @@
             height: auto;
 
             .contact-icon-wrap{
-                flex-flow: row wrap;
+                display: grid;
+                grid-template-areas: 
+                "img"
+                "text";
+                grid-gap: 2vh;
                 width: 100% ;
-                height: 70px;
+                height: auto;
+                justify-content: center;
                 align-items: center;
-                margin-left: 5vw;
                 margin-bottom: 2vh;
+                a,
+                .contact-icons{
+                    grid-area: img;
+                    justify-self: center;
+                }
 
                 .contact-icon-text{
-                    transform: translateX(50px);
+                    grid-area: text;
+                    transform: translate(0px, 0px);
+                    height: 20px;
                 }
             }
         }
