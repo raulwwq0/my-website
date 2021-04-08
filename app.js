@@ -27,15 +27,15 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/*/home', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
-app.get('/projects', (req, res) => {
+app.get('/*/projects', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
-app.get('/contact', (req, res) => {
+app.get('/*/contact', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
