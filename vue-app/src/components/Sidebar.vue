@@ -75,6 +75,7 @@
 <script>
 import { ref, watchEffect } from "vue";
 import gsap from "gsap";
+import store from "../store";
 import Buttons from "./Buttons";
 
 export default {
@@ -131,10 +132,10 @@ export default {
       isSidebarOFF.value = !isSidebarOFF.value;
     }
 
-    var lang = ref(localStorage.getItem('lang'));
+    var lang = ref(store.state.lang);
 
     watchEffect(() => {
-      lang.value = localStorage.getItem('lang');
+      lang.value = store.state.lang;
     });
 
     return { isSidebarOFF, sidebarChangeStatus, lang };
