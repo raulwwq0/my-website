@@ -169,6 +169,7 @@
             display: flex;
             flex-flow: column wrap;
             margin-top: 5vh;
+            margin-bottom: 40px;
             height: auto;
 
             .contact-icon-wrap{
@@ -181,7 +182,8 @@
                 height: auto;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 2vh;
+                margin-bottom: 5vh;
+
                 a,
                 .contact-icons{
                     grid-area: img;
@@ -193,6 +195,14 @@
                     transform: translate(0px, 0px);
                     height: 20px;
                 }
+            }
+
+            .contact-icon-wrap:first-child{
+                margin-top: 3vh;
+            }
+
+            .contact-icon-wrap:last-child{
+                margin-bottom: 2vh;
             }
         }
 
@@ -208,4 +218,10 @@
         }
     }
 
+}
+
+@media screen and (max-width: 405px){
+    .content{
+        width: 87.5% !important;
+    }
 }
