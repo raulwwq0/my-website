@@ -1,15 +1,12 @@
 import { createStore } from "vuex";
 
 const store = createStore({
-  state: {
-    lang: 'es',
-  },
   mutations: {
-    CHANGE_LANG(state){
-      if (state.lang === 'es') {
-        state.lang = 'en';
+    CHANGE_LANG(){
+      if (localStorage.getItem('lang') === 'es') {
+        localStorage.setItem('lang', 'en');
       } else {
-        state.lang = 'es';
+        localStorage.setItem('lang', 'es');
       }
     }
   },

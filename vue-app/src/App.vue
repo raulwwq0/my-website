@@ -9,7 +9,6 @@
 <script>
 import './assets/styles/css/styles.css';
 import {ref, watchEffect} from 'vue';
-import store from './store';
 import Sidebar from './components/Sidebar';
 import Background from './components/Background';
 
@@ -20,10 +19,10 @@ export default {
     Background,
   },
   setup() {
-    var lang = ref(store.state.lang);
+    var lang = ref(localStorage.getItem('lang'));
 
     watchEffect(() => {
-      lang.value = store.state.lang;
+      lang.value = localStorage.getItem('lang');
     });
 
     return {lang}
