@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import { ref, watchEffect } from "vue";
+import { onBeforeMount, onMounted, ref, watchEffect } from "vue";
 import gsap from "gsap";
 import store from "../store";
 import Buttons from "./Buttons";
@@ -132,16 +132,35 @@ export default {
       isSidebarOFF.value = !isSidebarOFF.value;
     }
 
+    function checkLang(lang){
+      if (lang.value === null) {
+        var userLang = navigator.language || navigator.userLanguage;
+
+        if (userLang.includes("es")) {
+          lang.value = 'es';
+          store.state.lang = 'es';
+        } else{
+          lang.value = 'en';
+          store.state.lang = 'en';
+        }
+      }
+    }
+
     var lang = ref(store.state.lang);
 
     watchEffect(() => {
       lang.value = store.state.lang;
     });
 
+    onBeforeMount(() => {
+      checkLang(lang);
+    })
+
+    onMounted(() => {
+      sidebarChangeStatus();
+    })
+
     return { isSidebarOFF, sidebarChangeStatus, lang };
-  },
-  mounted() {
-    this.sidebarChangeStatus();
   },
 };
 </script>

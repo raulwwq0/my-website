@@ -1,52 +1,76 @@
 <template>
-    <div id="options-buttons">
-        <div id="lang-switcher">
-            <span class="es">
-                <img src="../assets/images/spain.svg" alt="Spanish"/>
-            </span>
-            <input id="lang-checkbox" type="checkbox" class="toggle" @change="changeLanguage()">
-            <span class="en">
-                <img src="../assets/images/britain.svg" alt="English"/>
-            </span>
-        </div>
+  <div id="options-buttons">
+    <div id="lang-switcher">
+      <span class="es">
+        <img src="../assets/images/spain.svg" alt="Spanish" />
+      </span>
+      <input
+        id="lang-checkbox"
+        type="checkbox"
+        class="toggle"
+        @change="changeLang()"
+      />
+      <span class="en">
+        <img src="../assets/images/britain.svg" alt="English" />
+      </span>
     </div>
+  </div>
 </template>
 
 <script>
-import {onMounted} from 'vue';
+import { onBeforeMount, onMounted } from "vue";
 import store from "../store";
 import router from "../router/router";
 
 export default {
-    name: 'Buttons',
-    setup() {
+  name: "Buttons",
+  setup() {
+    function changeLang() {
+      store.commit("CHANGE_LANG");
+      var currentPath = router.currentRoute.value.path;
 
-        function changeLanguage() {
-            store.commit("CHANGE_LANG");
-            var currentPath = router.currentRoute.value.path;
+      currentPath = currentPath.slice(4, currentPath.length);
 
-            currentPath = currentPath.slice(4, currentPath.length);
-            
-            router.push({path: `/${localStorage.getItem('lang')}/${currentPath}`})
-        }
-
-        function getLanguageFromLocalStorage() {
-            var lang_storage = localStorage.getItem('lang');
-
-            if(lang_storage === null) localStorage.setItem('lang', 'es');
-
-            if(lang_storage === 'en'){
-                document.getElementById('lang-checkbox').checked = true;
-            } else {
-                document.getElementById('lang-checkbox').checked = false;
-            }
-        }
-
-        onMounted(() => {
-            getLanguageFromLocalStorage();
-        })
-
-        return {changeLanguage}
+      router.push({ path: `/${localStorage.getItem("lang")}/${currentPath}` });
     }
-}
+
+    function setDefaultLang(){
+      var userLang = navigator.language || navigator.userLanguage;
+
+      if (localStorage.getItem("lang") === null) {
+        if (userLang.includes("es")) {
+          localStorage.setItem("lang", "es");
+          router.push({
+            path: `/es/home`,
+          });
+        } else{
+          localStorage.setItem("lang", "en");
+          router.push({
+            path: `/en/home`,
+          });
+        }
+      }
+    }
+
+    function getLangFromLocalStorage() {
+      var lang_storage = localStorage.getItem("lang");
+
+      if (lang_storage === "en") {
+        document.getElementById("lang-checkbox").checked = true;
+      } else {
+        document.getElementById("lang-checkbox").checked = false;
+      }
+    }
+
+    onBeforeMount(() => {
+      setDefaultLang();
+    });
+
+    onMounted(() => {
+        getLangFromLocalStorage();
+    })
+
+    return { changeLang };
+  },
+};
 </script>
