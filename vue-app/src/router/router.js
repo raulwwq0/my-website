@@ -5,6 +5,7 @@ import ContactES from '../components/es/Contact/Contact';
 import HomeEN from '../components/en/Home/Home';
 import ProjectsEN from '../components/en/Projects/Projects';
 import ContactEN from '../components/en/Contact/Contact';
+import ErrorComponent from '../components/Error';
 
 const routes = [
     {path: '/', redirect: '/es/home'},
@@ -14,6 +15,7 @@ const routes = [
     {path: '/en/home', name: 'HomeEN', component: HomeEN},
     {path: '/en/projects', name: 'ProjectsEN', component: ProjectsEN},
     {path: '/en/contact', name: 'ContactEN', component: ContactEN},
+    {path: '/:catchAll(.*)', name: 'ErrorComponent', component: ErrorComponent}
 ]
 
 const router = createRouter({

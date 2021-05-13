@@ -12,6 +12,7 @@ All these styles are imported into styles.css
 @use 'projects';
 @use 'contact';
 @use 'responsive';
+@use 'error';
 
 // Custom Font
 @font-face {
