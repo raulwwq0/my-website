@@ -51,13 +51,14 @@ app.get('/en/contact', (req, res) => {
     res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
 });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
-});
-
 var project_routes = require('./routes/project');
 
 app.use('/api', project_routes);
+
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+});
 
 
 // Export this module
