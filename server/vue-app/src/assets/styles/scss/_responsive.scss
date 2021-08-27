@@ -1,0 +1,262 @@
+@media screen and (max-width: 1200px){
+    .title{
+        width: 30% !important;
+    }
+
+    #about-me{
+        #about-text{
+            width: 60%;
+        }
+
+        img{
+            width: 35%;
+        }
+    }
+
+    #projects{
+        grid-template-columns: repeat(4, 1fr);
+        .project{
+            .project-info{
+                .project-title{
+                    h2{
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        }
+    }
+
+    #contact{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 1fr);
+
+        #different-ways-contact{
+            margin-top: -20vh;
+        }
+    }
+}
+
+@media screen and (max-width:900px){
+    .contact-icons{
+        filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
+    }
+
+    .contact-icon-text{
+        opacity: 1 !important;
+        transform: translateY(50px);
+    }
+
+    #projects{
+        grid-template-columns: repeat(2, 1fr);
+        .project{
+            .project-info{
+                .project-title{
+                    h2{
+                        font-size: 3vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .title{
+        width: 85% !important;
+    }
+
+    #about-me{
+        display: flex;
+        flex-flow:  column wrap;
+        #about-text{
+            width: 100%;
+        }
+
+        img{
+            position:  static;
+            border-radius: 20px;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    }
+
+    #skills{
+        #skills-svg{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-row-gap: 5vh;
+            justify-items: center;
+        }
+    }
+
+    .error-div{
+        height: 400px !important;
+        padding: 0 10px;
+
+        h1,
+        h3{
+            height: 80px !important;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 60px !important;
+        }
+
+        h3{
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 550px){
+    .title,
+    .presentation-title{
+        font-size: 30px !important;
+    }
+    .subtitle{
+        font-size: 20px !important;
+    }
+
+    .advice{
+        font-size: 2.5vw !important;
+        width: 62.5% !important;
+    }
+
+    .title,
+    #about-me,
+    #skills,
+    #projects-section-text,
+    #projects,
+    #email-form,
+    #different-ways-contact{
+        width: 75% !important;
+    }
+
+    .first-p,
+    #projects-section-text,
+    .project-info p,
+    #about-me #about-text p,
+    #skills p{
+        font-size: 16px !important;
+    }
+
+    #presentation-banner{
+        #presentation-text{
+            height: 200px;
+        }
+    }
+
+    #projects-section-text{
+        margin-bottom: 70px;
+    }
+
+    #projects{
+        grid-template-columns: 1fr;
+        .project{
+            .project-info{
+                form{
+                    width: 80%;
+
+                    button{
+                        width: 100%;
+                    }
+                }
+                
+                .project-title{
+                    h2{
+                        font-size: 3.5vw;
+                    }
+                }
+            }
+        }
+    }
+
+    #contact{
+        .first-p{
+            height: 20px;
+            text-align: center;
+        }
+
+        #email-form{
+            input[type=submit]{
+                width: 100%;
+            }
+        }
+
+        #different-ways-contact{
+            display: flex;
+            flex-flow: column wrap;
+            margin-top: 5vh;
+            margin-bottom: 40px;
+            height: auto;
+
+            .contact-icon-wrap{
+                display: grid;
+                grid-template-areas: 
+                "img"
+                "text";
+                grid-gap: 2vh;
+                width: 100% ;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 5vh;
+
+                a,
+                .contact-icons{
+                    grid-area: img;
+                    justify-self: center;
+                }
+
+                .contact-icon-text{
+                    grid-area: text;
+                    transform: translate(0px, 0px);
+                    height: 20px;
+                }
+            }
+
+            .contact-icon-wrap:first-child{
+                margin-top: 3vh;
+            }
+
+            .contact-icon-wrap:last-child{
+                margin-bottom: 2vh;
+            }
+        }
+
+        #email-sent,
+        #email-fail{
+            top: 30vh !important;
+            bottom: 0px !important;
+            margin: auto;
+        }
+
+        #tag-was-copied{
+            bottom: -2vh !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 405px){
+    .content{
+        width: 87.5% !important;
+    }
+
+    .title,
+    .presentation-title{
+        font-size: 25px !important;
+    }
+    .subtitle{
+        font-size: 18px !important;
+    }
+
+    .first-p,
+    #projects-section-text,
+    .project-info p,
+    #about-me #about-text p,
+    #skills p{
+        font-size: 14px !important;
+    }
+}

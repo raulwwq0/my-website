@@ -1,0 +1,113 @@
+@use 'var';
+
+#presentation-banner{
+    display: block;
+    position: relative;
+    width: var.$all-width;
+    height: 100vh;
+
+    #presentation-text {
+        display: flex;
+        flex-flow:  column wrap;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -10px;
+        margin: auto;
+        padding-right: 7.5%;
+        width: var.$main-width;
+        height: 300px;
+        text-align: right;
+        border-top-left-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+        background-color: #fff;
+        box-shadow: var.$main-shadow;
+
+        .presentation-title {
+            font-size: 50px;
+            font-family: var.$text-font;            
+            margin-bottom: 30px;
+        }
+    }
+}
+
+#about-me,
+#skills{
+    display: flex;
+    flex-flow: column wrap;
+    align-self: center;
+    margin-bottom: 10vh;
+    width: var.$main-width;
+    border-radius: 20px;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: var.$main-shadow;
+}
+
+#about-me{
+    position: relative;
+    min-height: 350px;
+
+    #about-text{
+        width: 75%;
+
+        .subtitle{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p{
+            font-family: var.$text-font;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+            float: left;
+            width: var.$all-width;
+            text-align: justify;
+            margin-right: 5%;
+        }
+    }
+
+    img{
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 25%;
+        height: 100%;
+    }
+}
+
+#skills {
+    margin-bottom: 40px;
+
+    .subtitle{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p{
+        font-family: var.$text-font;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+        float: left;
+        width: var.$all-width;
+        text-align: justify;
+    }
+
+    #skills-svg{
+        display: flex;
+        justify-content: space-around;
+        width: var.$all-width;
+
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }    
+}

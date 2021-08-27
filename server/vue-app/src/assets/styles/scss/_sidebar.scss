@@ -1,0 +1,75 @@
+@use 'var';
+
+#sidebar{
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    flex-flow: column;
+    background-color: #fff;
+    justify-content: space-between;
+    width: 40px;
+    height: 100vh;
+
+    .icon-wrap{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding-left: 6px;
+        width: 40px;
+    }
+
+    .hamburger-wrap{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #hamburger,
+    #menu-icons,
+    #social-icons{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        img{
+            //padding-left: 5px;
+            width: 25px;
+        }
+    }
+
+    #menu-icons{
+        .active{
+            display: block;
+            color: var.$second-color;
+            width: 38px;
+            img{
+                filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
+            }
+            
+            //padding: 10px;
+        }
+    }
+
+    #hamburger{
+        cursor: pointer;
+    }
+
+    .icon-text {
+        display: none;
+        opacity: 0;
+        color: var.$font-color;
+        font-family: var.$text-font;
+        font-size: var.$font-size-1;
+        margin-left: 20px;
+        span{
+            display: flex;
+            height: 25px;
+        }
+    }
+
+    #github-icon:hover {
+        filter: invert(100%) brightness(30%) sepia(1) hue-rotate(110deg) saturate(10.5);
+    }
+    
+}

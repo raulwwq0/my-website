@@ -1,0 +1,40 @@
+@use 'var';
+
+.error-div{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    font-family: var.$text-font;
+    background-color: var.$second-color;
+    box-shadow: var.$main-shadow;
+    border-radius: 20px;
+    width: var.$main-width;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+    h1,
+    h3{
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+        height: 150px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1{
+        font-size: 120px;
+    }
+
+    h3{
+        font-size: var.$font-size-1;
+        font-weight: lighter;
+    }
+}
