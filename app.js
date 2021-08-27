@@ -14,7 +14,7 @@ var app = express();
 app.use(compression());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, './vue-app/dist/')));
+app.use(express.static(path.join(__dirname, './view/')));
 
 
 // CORS
@@ -28,27 +28,27 @@ app.use((req, res, next) => {
 
 // Routes
 app.get('/es/home', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 app.get('/en/home', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 app.get('/es/projects', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 app.get('/en/projects', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 app.get('/es/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 app.get('/en/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 var project_routes = require('./routes/project');
@@ -57,7 +57,7 @@ app.use('/api', project_routes);
 
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './vue-app/dist/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
 
