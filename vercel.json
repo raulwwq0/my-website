@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "name": "petgram-server-raul_aguilar",
-  "alias": ["petgram-api-raul-aguilar"],
   "builds": [{ "src": "index.js", "use": "@vercel/node" }],
   "routes": [{
     "headers": {
