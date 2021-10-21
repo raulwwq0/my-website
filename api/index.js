@@ -2,7 +2,7 @@
 
 // Modules
 var mongoose = require('mongoose');
-var app = require('./app');
+var app = require('../app');
 
 // Port for localhost
 //var port = 3900;
