@@ -4,7 +4,7 @@
   "description": "API for my website (raul-aguilar)",
   "main": "index.js",
   "scripts": {
-    "build": "npm run vercel-build"
+    "build": "npm run vercel-build",
     "start": "node index.js",
     "test": "nodemon index.js"
   },
