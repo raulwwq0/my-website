@@ -2,7 +2,7 @@
 
 // Modules
 var mongoose = require('mongoose');
-var app = require('./api/app');
+var app = require('./app');
 
 // Port for localhost
 //var port = 3900;
@@ -10,7 +10,7 @@ var app = require('./api/app');
 // Mongoose configurations
 mongoose.Promise = global.Promise;
 
-mongoose.set('useFindAndModify', false);
+//mongoose.set('useFindAndModify', false);
 
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => {
