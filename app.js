@@ -53,7 +53,7 @@ app.get('/en/contact', (req, res) => {
 
 var project_routes = require('./api/project');
 
-app.use('/api', project_routes);
+app.use('/api_service', project_routes);
 
 
 app.get('*', (req, res) => {
