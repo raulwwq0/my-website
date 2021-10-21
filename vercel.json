@@ -1,7 +1,3 @@
 {
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/api/get-projects", "dest": "/" },
-    { "src": "/api/get-image/:image", "dest": "/" },
-  ]
+  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 }
