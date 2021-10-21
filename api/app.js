@@ -51,7 +51,7 @@ app.get('/en/contact', (req, res) => {
     res.sendFile(path.join(__dirname, './view/index.html'));
 });
 
-var project_routes = require('./api/project');
+var project_routes = require('../routes/project');
 
 app.use('/api', project_routes);
 
