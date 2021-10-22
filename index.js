@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var app = require('./app');
 
 // Port for localhost
-//var port = 3900;
+var port = 3900;
 
 // Mongoose configurations
 mongoose.Promise = global.Promise;
@@ -16,6 +16,6 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology
         .then(() => {
             // Create server
             app.listen(process.env.PORT, () => {
-                console.log('Server working on port: ' + process.env.PORT);
+                console.log('Server working on port: ' + port);
             });
         });
