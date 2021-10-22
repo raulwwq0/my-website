@@ -15,6 +15,6 @@ jobs:
         username: ${{secrets.SSH_USERNAME}}
         
         script:
-          cd ~/web_services/my_website_server
+          cd ~/web_services/my_website_server/
           git clone https://github.com/raulwwq0/my-website-server
           echo "Deploy Successful!!!"
