@@ -7,7 +7,7 @@ var Project = require('../models/project');
 
 var controller = {
 
-    save: (req, res) => {
+    /*save: (req, res) => {
         // Catch data using post
         var params = req.body;
 
@@ -62,7 +62,7 @@ var controller = {
         }
 
 
-    },
+    },*/
 
     getProjects: (req, res) => {
 
@@ -89,7 +89,7 @@ var controller = {
         });        
     },
 
-    upload: (req, res) => {
+    /*upload: (req, res) => {
 
         // Catch file
         var file_name = 'No image';
@@ -137,7 +137,7 @@ var controller = {
                 });
             });            
         };        
-    },
+    },*/
 
     getImage: (req, res) => {
         var file = req.params.image;
