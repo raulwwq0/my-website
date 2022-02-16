@@ -10,7 +10,7 @@
   "author": "Raúl Aguilar",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.19.2",
     "compression": "^1.7.4",
     "connect-multiparty": "^2.2.0",
     "dotenv": "^10.0.0",
